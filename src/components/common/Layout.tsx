@@ -3,14 +3,18 @@ import React, { useState } from 'react';
 import { Box } from '@mui/material';
 
 import { Header } from './Header';
-import { ExecutiveSummaryTab } from '../segments/ExecutiveSummaryTab';
-import { BrandActivityTab } from '../segments/BrandActivityTab';
-import { SegmentTab } from '../segments/SegmentTab';
+import { ExecutiveSummaryTab } from '../ExecutiveSummaryTab';
+import { BrandActivityTab } from '../BrandActivityTab';
+import { SegmentTab } from '../SegmentTab';
+import { ApplicationsTab } from '../ApplicationsTab';
+import { CountriesTab } from '../CountriesTab';
 
 const TABS = [
   <ExecutiveSummaryTab key="executive" />,
   <BrandActivityTab key="live" />,
   <SegmentTab key="segment" />,
+  <ApplicationsTab key="applications" />,
+  <CountriesTab key="countries" />,
 ];
 
 export function Layout() {

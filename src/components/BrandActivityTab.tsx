@@ -26,17 +26,17 @@ import FilterListOffIcon from '@mui/icons-material/FilterListOff';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
-import { useSegmentActivity, useSegmentActivityCount, useUniqueBrands } from '../../queries/brand-activity.queries';
-import { FilterBar } from '../common/FilterBar';
-import { BrandSessionsDrawer } from './BrandSessionsDrawer';
-import type { SegmentActivity } from '../../types/segments.types';
-import { DATE_PRESETS, isoFromOffset, type DatePreset } from '../../utils/datePresets';
+import { useSegmentActivity, useSegmentActivityCount, useUniqueBrands } from '../queries/brand-activity.queries';
+import { FilterBar } from './common/FilterBar';
+import { BrandSessionsDrawer } from './common/BrandSessionsDrawer';
+import type { SegmentActivity } from '../types/segments.types';
+import { DATE_PRESETS, isoFromOffset, type DatePreset } from '../utils/datePresets';
 import {
   BRAND_ACTIVITY_PER_PAGE,
   BRAND_ACTIVITY_ROW_HEIGHT,
   BRAND_ACTIVITY_VISIBLE_ROWS,
   BRAND_ACTIVITY_TABLE_HEADERS
-} from '../../utils/constants';
+} from '../utils/constants';
 
 export function BrandActivityTab() {
   const theme = useTheme();

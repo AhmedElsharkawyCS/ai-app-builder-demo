@@ -7,6 +7,8 @@ export const TAB_LABELS = [
   'Executive Summary',
   'Who Is Active',
   'Segment',
+  'Applications',
+  'Countries',
 ] as const;
 
 // Auto-refresh interval in seconds

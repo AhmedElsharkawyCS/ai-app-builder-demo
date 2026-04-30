@@ -15,12 +15,12 @@ import {
   useMostUsedSegments,
   useMostUsedApps,
   useMostUsedServices,
-} from '../../queries/analytics.queries';
-import { FilterBar } from '../common/FilterBar';
-import { PieChartCard } from './PieChartCard';
-import { BarChartCard } from './BarChartCard';
-import { DATE_PRESETS, isoFromOffset, type DatePreset } from '../../utils/datePresets';
-import { formatHours } from '../../utils/formatters';
+} from '../queries/analytics.queries';
+import { FilterBar } from './common/FilterBar';
+import { PieChartCard } from './common/PieChartCard';
+import { BarChartCard } from './common/BarChartCard';
+import { DATE_PRESETS, isoFromOffset, type DatePreset } from '../utils/datePresets';
+import { formatHours } from '../utils/formatters';
 
 interface KpiCardProps {
   label: string;

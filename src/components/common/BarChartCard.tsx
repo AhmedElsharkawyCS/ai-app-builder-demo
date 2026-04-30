@@ -13,7 +13,7 @@ import {
 } from 'recharts';
 
 import type { BarSlice } from '../../types/segments.types';
-import { PALETTE, CustomTooltip } from './shared/chartConfig';
+import { PALETTE, CustomTooltip } from './ChartConfig';
 import { truncate } from '../../utils/formatters';
 
 interface BarChartCardProps {
@@ -31,7 +31,7 @@ interface BarTooltipProps {
 
 function BarTooltip({ active, payload, label }: BarTooltipProps) {
   if (!active || !payload || payload.length === 0) return null;
-  return <CustomTooltip active={active} label={label} value={payload[0].value} unit="events" />;
+  return <CustomTooltip active={active} label={label} value={payload[0].value} unit="sessions" />;
 }
 
 export function BarChartCard({ title, data, isLoading, isError }: BarChartCardProps) {

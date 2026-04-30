@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { Box } from '@mui/material';
 
-import { useOrgStats } from '../../../queries/organizations.queries';
+import { useOrgStats } from '../../queries/organizations.queries';
 import {
   useBusinessStats,
   useDevelopmentStats,
@@ -9,9 +9,9 @@ import {
   usePaymentStats,
   useRegulatorStats,
   useIndividualStats,
-} from '../../../queries/business.queries';
+} from '../../queries/business.queries';
 
-import { FilterBar } from '../../common/FilterBar';
+import { FilterBar } from '../common/FilterBar';
 import { SummarySection } from './SummarySection';
 import { OrganizationsSection } from './OrganizationsSection';
 import { IndividualsSection } from './IndividualsSection';

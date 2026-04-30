@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import GroupsIcon from '@mui/icons-material/Groups';
 
-import { useIndividualStats } from '../../../queries/business.queries';
+import { useIndividualStats } from '../../queries/business.queries';
 import { CategorySection } from './CategorySection';
 import { MetricPair } from './MetricPair';
 

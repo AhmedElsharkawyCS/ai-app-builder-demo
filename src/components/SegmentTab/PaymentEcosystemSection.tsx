@@ -15,7 +15,7 @@ import StoreIcon from '@mui/icons-material/Store';
 import InsertChartIcon from '@mui/icons-material/InsertChart';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 
-import { usePaymentStats } from '../../../queries/business.queries';
+import { usePaymentStats } from '../../queries/business.queries';
 import { CategorySection } from './CategorySection';
 import { MetricPair } from './MetricPair';
 

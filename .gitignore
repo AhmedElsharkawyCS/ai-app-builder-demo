@@ -49,3 +49,7 @@ coverage/
 
 # Test data with secrets
 test.json
+
+# New Relic
+window_opened_data.json
+action.json

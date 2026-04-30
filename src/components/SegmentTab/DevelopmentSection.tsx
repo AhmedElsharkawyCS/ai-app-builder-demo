@@ -4,7 +4,7 @@ import BarChartIcon from '@mui/icons-material/BarChart';
 import PersonIcon from '@mui/icons-material/Person';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 
-import { useDevelopmentStats } from '../../../queries/business.queries';
+import { useDevelopmentStats } from '../../queries/business.queries';
 import { CategorySection } from './CategorySection';
 import { MetricPair } from './MetricPair';
 

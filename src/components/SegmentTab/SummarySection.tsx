@@ -4,7 +4,7 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import PeopleIcon from '@mui/icons-material/People';
 import CategoryIcon from '@mui/icons-material/Category';
 
-import { SEGMENT_CODE_COUNT } from '../../../types/segmentCodes';
+import { SEGMENT_CODE_COUNT } from '../../types/segmentCodes';
 
 interface SummarySectionProps {
   totalSegments: number | undefined;

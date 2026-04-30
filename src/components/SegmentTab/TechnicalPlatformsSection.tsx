@@ -9,7 +9,7 @@ import ReceiptIcon from '@mui/icons-material/Receipt';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import MobileScreenShareIcon from '@mui/icons-material/MobileScreenShare';
 
-import { usePlatformStats } from '../../../queries/business.queries';
+import { usePlatformStats } from '../../queries/business.queries';
 import { CategorySection } from './CategorySection';
 import { MetricPair } from './MetricPair';
 

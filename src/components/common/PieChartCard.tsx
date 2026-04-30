@@ -5,7 +5,7 @@ import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recha
 import type { Props as LegendProps } from 'recharts/types/component/DefaultLegendContent';
 
 import type { PieSlice } from '../../types/segments.types';
-import { PALETTE, CustomTooltip } from './shared/chartConfig';
+import { PALETTE, CustomTooltip } from './ChartConfig';
 
 interface PieChartCardProps {
   title: string;

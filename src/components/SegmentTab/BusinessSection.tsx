@@ -4,7 +4,7 @@ import BusinessIcon from '@mui/icons-material/Business';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 import InsertChartIcon from '@mui/icons-material/InsertChart';
 
-import { useBusinessStats } from '../../../queries/business.queries';
+import { useBusinessStats } from '../../queries/business.queries';
 import { CategorySection } from './CategorySection';
 import { MetricPair } from './MetricPair';
 

@@ -1,0 +1,15 @@
+export enum ApplicationCode {
+  ACCOUNT = 'ACCOUNT',
+  BILLING = 'BILLING',
+  WALLET = 'WALLET',
+  AUTHENTICATION = 'AUTHENTICATION',
+  SLA_PROCESS = 'SLA_PROCESS',
+  TERMINALS = 'TERMINALS',
+  REPORTS = 'REPORTS',
+  PAYOUT = 'PAYOUT',
+  ACCEPTANCE = 'ACCEPTANCE',
+  BUSINESS = 'BUSINESS',
+  LEAD = 'LEAD',
+}
+
+export const APPLICATION_CODE_COUNT = Object.keys(ApplicationCode).length;

@@ -4,7 +4,7 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import PolicyIcon from '@mui/icons-material/Policy';
 
-import { useRegulatorStats } from '../../../queries/business.queries';
+import { useRegulatorStats } from '../../queries/business.queries';
 import { CategorySection } from './CategorySection';
 import { MetricPair } from './MetricPair';
 
