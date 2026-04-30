@@ -2,10 +2,16 @@ import { useQuery } from '@tanstack/react-query';
 
 import { queryNewRelic } from '../api/newrelic';
 
-const SINCE_DEFAULT = 'SINCE 24 hours ago';
+function formatDateForNRQL(date: Date): string {
+  return date.toISOString();
+}
 
-function sinceClauseFrom(since?: string) {
-  return since ? `SINCE '${since}'` : SINCE_DEFAULT;
+function getDateRangeClause(dateRange?: [Date, Date]): string {
+  if (!dateRange) {
+    return 'SINCE 24 hours ago';
+  }
+  const [startDate, endDate] = dateRange;
+  return `SINCE '${formatDateForNRQL(startDate)}' UNTIL '${formatDateForNRQL(endDate)}'`;
 }
 
 // ── Types ──────────────────────────────────────────────────────────────────
@@ -37,17 +43,17 @@ export interface CitiesData {
 /**
  * Fetch session statistics grouped by country
  */
-export function useCountries(since?: string) {
+export function useCountries(dateRange?: [Date, Date]) {
   return useQuery<CountriesData>({
-    queryKey: ['newrelic', 'countries', since],
+    queryKey: ['newrelic', 'countries', dateRange],
     queryFn: async () => {
-      const sinceClause = sinceClauseFrom(since);
+      const dateClause = getDateRangeClause(dateRange);
       const rows = await queryNewRelic<Record<string, unknown>>(
         `SELECT count(*) as total ` +
         `FROM PageAction ` +
         `WHERE actionName = 'TAPOS_APP_WINDOW_OPENED' ` +
         `FACET countryCode, sessionId, segmentId ` +
-        `${sinceClause} ` +
+        `${dateClause} ` +
         `LIMIT MAX`
       );
 
@@ -101,17 +107,17 @@ export function useCountries(since?: string) {
 /**
  * Fetch session statistics grouped by city
  */
-export function useCities(since?: string) {
+export function useCities(dateRange?: [Date, Date]) {
   return useQuery<CitiesData>({
-    queryKey: ['newrelic', 'cities', since],
+    queryKey: ['newrelic', 'cities', dateRange],
     queryFn: async () => {
-      const sinceClause = sinceClauseFrom(since);
+      const dateClause = getDateRangeClause(dateRange);
       const rows = await queryNewRelic<Record<string, unknown>>(
         `SELECT count(*) as total ` +
         `FROM PageAction ` +
         `WHERE actionName = 'TAPOS_APP_WINDOW_OPENED' ` +
         `FACET city, sessionId, segmentId ` +
-        `${sinceClause} ` +
+        `${dateClause} ` +
         `LIMIT MAX`
       );
 

@@ -1,8 +1,9 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { Box, Typography, Paper, Skeleton, useTheme } from '@mui/material';
 import PublicIcon from '@mui/icons-material/Public';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import BarChartIcon from '@mui/icons-material/BarChart';
+import RangeCalender from '@tap-payments/os-micro-frontend-shared/components/RangeCalender';
 
 import { useCountries, useCities } from '../queries/countries.queries';
 import { FilterBar } from './common/FilterBar';
@@ -10,8 +11,14 @@ import { BarChartCard } from './common/BarChartCard';
 import type { BarSlice } from '../types/segments.types';
 
 export function CountriesTab() {
-  const { data: countriesData, isLoading: countriesLoading, isError: countriesError } = useCountries();
-  const { data: citiesData, isLoading: citiesLoading, isError: citiesError } = useCities();
+  // Default to last 24 hours
+  const [dateRange, setDateRange] = useState<[Date, Date]>([
+    new Date(Date.now() - 24 * 60 * 60 * 1000),
+    new Date()
+  ]);
+
+  const { data: countriesData, isLoading: countriesLoading, isError: countriesError } = useCountries(dateRange);
+  const { data: citiesData, isLoading: citiesLoading, isError: citiesError } = useCities(dateRange);
 
   // Convert country data to bar chart format
   const countriesChartData = useMemo<BarSlice[] | undefined>(() => {
@@ -118,7 +125,21 @@ export function CountriesTab() {
       }}
     >
       {/* Filter Bar */}
-      <FilterBar />
+      <FilterBar>
+        <Box sx={{ flex: 1 }} />
+        <RangeCalender
+          defaultDate={dateRange}
+          onDateChange={setDateRange}
+          mode="gregorian"
+          numberOfMonths={2}
+          noTimezone
+          noQuickFilter={false}
+          timezone={null}
+          defaultCountryTimezone="Asia/Dubai"
+          browserTimezone={Intl.DateTimeFormat().resolvedOptions().timeZone}
+          timezoneCountriesCodes={[]}
+        />
+      </FilterBar>
 
       {/* Scrollable Content Area */}
       <Box
