@@ -103,7 +103,7 @@ export function SummarySection({
         }}
       >
         {renderSummaryCard(
-          'Total Unique Segments',
+          'Total Active Segments',
           totalSegments,
           <TrendingUpIcon sx={{ fontSize: 24 }} />,
           '#3b82f6'
